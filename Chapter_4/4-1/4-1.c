@@ -1,7 +1,7 @@
 #include <stdio.h> 
 #define MAXLINE 1000	/* maximum input line length */
 
-int getline(char line[], int max);
+int Getline(char line[], int max);
 int strindex(char source[], char searchfor[]);
 
 char pattern[] = "ould";	/* pattern to search for */
@@ -9,10 +9,10 @@ char pattern[] = "ould";	/* pattern to search for */
 /* find all lines matching pattern */
 int main()
 {
-	char line[MAXLINEA];
+	char line[MAXLINE];
 	int found = 0;
 
-	while (getline(line, MAXLINE) > 0)
+	while (Getline(line, MAXLINE) > 0)
 		if (strindex(line, pattern) >= 0) {
 			printf("%s", line);
 			found++;
@@ -20,8 +20,8 @@ int main()
 	return found;
 }
 
-/* getline: get line into s, return length */
-int getline(char s[], int lim)
+/* Getline: get line into s, return length */
+int Getline(char s[], int lim)
 {
 	int c, i;
 
