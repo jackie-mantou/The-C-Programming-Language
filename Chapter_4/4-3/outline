@@ -1,0 +1,11 @@
+while (next operator or operand is not end-of-file indicator)
+	if (number)
+		push it
+	else if (operator)
+		pop number
+		do operation
+		push result
+	else if (newline)
+		pop and print top of stack
+	else 
+		error

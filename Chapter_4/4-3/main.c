@@ -20,7 +20,7 @@ int main()
 				push(pop() + pop());
 				break;
 			case '*':
-				push(pop() - op2);
+				push(pop() * pop());
 				break;
 			case '-':
 				op2 = pop();
