@@ -41,5 +41,6 @@ int main()
                 break;
         }
     }
+    printf("test tab and spaces\n");
     return 0;
 }
