@@ -5,4 +5,4 @@ double pop(void);
 int getop(char []);
 int getch(void);
 void ungetch(int);
-int Isinteger(double);
+double Isinteger(double);
