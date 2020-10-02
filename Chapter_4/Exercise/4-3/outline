@@ -24,11 +24,10 @@ while (next operator or operand is not end-of-file indicator)
 2. provisions for negative numbers
 getop {
 	... ...
-	if (not a minus)
-		return
-	else if (c = getch() is not a integer) {
-		return
-}
-	else {;}
-	......
+	if (minus) {
+		if (c = getch() is not a integer) {
+			return
+		}
+		else {;}
+	}......
 }
