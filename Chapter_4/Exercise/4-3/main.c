@@ -33,6 +33,7 @@ int main()
 					push(pop() / op2);
 				else
 					printf("error: zero divisor\n");
+				break;
 			case '%':
 				//op2 = pop();
 				if ((op2 = pop()) != 0.0) {
