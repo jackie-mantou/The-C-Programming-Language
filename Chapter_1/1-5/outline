@@ -12,3 +12,7 @@ while (character is not end-of-file indicator)
 The standard library ensures that an input text
 stream appears as a sequence of lines, each terminated by a newline.
 Hence, counting lines is just counting newlines.
+
+1.5.4 Word Counting
+The loose definition that a word is any sequence of characters
+that does not contain a blank, tab or newline;
