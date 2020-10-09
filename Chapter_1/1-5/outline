@@ -7,3 +7,8 @@ while (character is not end-of-file indicator)
 	read a character
 
 1.5.2 Character Couting
+
+1.5.3 Line Counting
+The standard library ensures that an input text
+stream appears as a sequence of lines, each terminated by a newline.
+Hence, counting lines is just counting newlines.
