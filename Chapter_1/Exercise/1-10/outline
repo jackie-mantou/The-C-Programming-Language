@@ -17,3 +17,8 @@ while ((c = getchar()) != EOF) {
 Problem: Doesn't know how to type a backspace which can be detected by 
 the program and replaced by /b
 
+Test:
+12	\ 12
+Result:
+12\t\\ 12
+

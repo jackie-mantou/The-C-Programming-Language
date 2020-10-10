@@ -7,9 +7,15 @@ Answer:
 while ((c = getchar()) != EOF) {
 	if (c != ' ' && c != '\n' && c != '\t') {
 		putchar(c);
-	while ((c = getchar()) != ' ' && c != '\n' && c != '\t') 
-		putchar(c);
-	putchar('\n');
+		while ((c = getchar()) != ' ' && c != '\n' && c != '\t') 
+			putchar(c);
+		putchar('\n');
 	}
 }
+
+Test:
+1. \n \t niubi sasa\n 
+Result:
+niubi
+sasa
 

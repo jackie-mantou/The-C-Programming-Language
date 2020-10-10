@@ -1,4 +1,5 @@
 Exercise 1-8. Write a program to count blanks, tabs, and newlines.
+
 Anwser: 
 while ((c = getchar()) != EOF) {
 	if (blanks)
@@ -9,3 +10,10 @@ while ((c = getchar()) != EOF) {
 		++c;
 }
 print a & b & c
+
+Test: 
+1 \t \n
+Result:
+nb = 2
+nt = 1
+nl = 1
