@@ -3,20 +3,18 @@
 /* count blanks, tabs, and newlines */
 int main()
 {
-    int c, bl, tab, nl;
+    int c, nb, nt, nl;
     
-    bl = 0;
-    tab = 0;
-    nl = 0;
+    nb = nt = nl = 0;
     while ((c = getchar()) != EOF) {
         if (c == ' ')
-            ++bl;
-        else if (c == '	')
-            ++tab;
+            ++nb;
+        else if (c == '\t')
+            ++nt;
         else if (c == '\n')
             ++nl;
     }
-    printf("blanks count is %d\ntabs count is %d\nnewlines count is %d\n", bl, tab, nl);
+    printf("blanks count is %d\ntabs count is %d\nnewlines count is %d\n", nb, nt, nl);
 
     return 0;
 }
