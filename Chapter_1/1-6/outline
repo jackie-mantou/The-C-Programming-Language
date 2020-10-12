@@ -1,0 +1,12 @@
+Let us write a program to count the number of occurrences of
+each digit, of white space characters (blanks, tab, newline),
+and of all other characters.
+
+A array subscript can be any integer expression, which includes
+integer variables like i, and integer constants.
+
+Test:
+1038 13\t \n dd\n
+Result:
+1 2 0 2 0 0 0 0 1 0, white space = 6, other = 2
+
