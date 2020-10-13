@@ -15,7 +15,12 @@ for (j = 1; j < i; ++j)
 	printf("-");
 while ((c = getchar()) != EOF) {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-		putchar(c);
+		i = 1;
+		while (((c = getchar()) >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+			putchar(c);
+			++i;
+		}
+		putchar('\n');
 	}
 }
           	
