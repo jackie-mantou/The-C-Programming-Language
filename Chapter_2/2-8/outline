@@ -1,0 +1,21 @@
+++n: increments n before its value is used;
+n++: increments n after its value is used;
+
+Accident discover:
+in the condition 'n = 5'
+1. printf("n = %d\n++n = %d  n++ = %d\n", n, ++n, n++);
+! <=>
+2. printf("n = %d\n", n);
+   printf("++n = %d ", ++n);
+   printf("n++ = %d\n", n++); 
+output of 1.:
+n = 7
+++n = 7 n++ = 5
+while output of 2.:
+n = 5
+++n = 6 n++ = 6
+
+Explaination:
+Obviously, the function printf calculates the arguments in a right to 
+left direction. i.e. int printf(char *format, arg1, arg2, arg3,  ...),
+the calculate order is arg3, arg2, arg1. It's a amazing!
