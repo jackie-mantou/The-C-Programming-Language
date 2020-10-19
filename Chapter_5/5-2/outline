@@ -1,0 +1,17 @@
+Pointers and Function Arguments
+Since C passes arguments to functions by value, there is no direct way for
+the called function to alter a variable in the calling function.
+So Pointer argument!
+Pointer argument enable a function to access and change objects in the 
+function that called it.
+
+Consider a function getint that performs free-format input conversion by 
+breaking a stream of characters into integer values, one integer per call.
+getint has to return the value it found and also signal end-of-file when
+there is no more input. These values have to be passed back by sepatate 
+paths, for no matter what value is used for EOF, that could also be the 
+value of an input integer.
+
+Our solution is to have getint return end of file status as its function 
+value, while using a pointer argument to store the converted integer back
+in the calling function.
