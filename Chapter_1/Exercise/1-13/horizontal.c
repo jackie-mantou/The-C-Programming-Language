@@ -5,7 +5,7 @@
 int main()
 {
     int c, i, j;
-	char symbol = '-';
+    char symbol = '-';
 
     while ((c = getchar()) != EOF) 
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
@@ -16,9 +16,9 @@ int main()
                 putchar(c);
                 ++i;
             }
-			printf("\t\t");
-			for (j = 0; j < i; ++j)
-				printf("%c", symbol);
+            printf("\t\t");
+            for (j = 0; j < i; ++j)
+                printf("%c", symbol);
             putchar('\n');
         }
     
