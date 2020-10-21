@@ -1,16 +1,24 @@
 #include <stdio.h>
 #include <ctype.h>
+
+#define SIZE  10
 int getch(void);
 void ungetch(int);
 int getint(int *);
 
 int main() 
 {
-    int *pn = NULL;
-    //while (getint(pn) != EOF)
-    getint(pn); 
-    if (pn)
-        printf("getint: get integer is %d\n", *pn);
+    /* int *pn;
+    int c;
+    while ((c = getint(pn)) != EOF)
+        printf("%d ", *pn); */
+    int n, array[SIZE];
+    for (n = 0; n < SIZE && getint(&array[n]) != EOF; n++)
+        ;
+    for (n = 0; n < SIZE; n++)
+        printf("%d ", array[n]);
+    printf("\n");
+
     return 0;
 }
 
