@@ -17,6 +17,7 @@ int main()
         ;
     for (n = 0; n < SIZE; n++)
         printf("%d ", array[n]);
+    /* test git stash */
     printf("\n");
 
     return 0;
