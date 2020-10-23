@@ -14,10 +14,13 @@ int main()
         printf("%d ", *pn); */
     int n, array[SIZE];
     for (n = 0; n < SIZE && getint(&array[n]) != EOF; n++)
-        ;
-    for (n = 0; n < SIZE; n++)
         printf("%d ", array[n]);
+<<<<<<< Updated upstream
     /* test git stash */
+=======
+    /* for (n = 0; n < SIZE; n++)
+        printf("%d ", array[n]);*/
+>>>>>>> Stashed changes
     printf("\n");
 
     return 0;
