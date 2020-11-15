@@ -2,17 +2,13 @@ objects = main.o getch.o getop.o stack.o
 calc : $(objects)
 	gcc -g $(objects) -o calc 
 
-main.o : main.c calc.h
-	gcc -g -c main.c -o main.o
+main.o : calc.h
 
-getch.o : getch.c calc.h
-	gcc -g -c getch.c -o getch.o
+getch.o : calc.h
 
-getop.o : getop.c calc.h
-	gcc -g -c getop.c -o getop.o
+getop.o : calc.h
 
-stack.o : stack.c calc.h
-	gcc -g -c stack.c -o stack.o
+stack.o : calc.h
 
 clean : 
 	rm calc $(objects)
