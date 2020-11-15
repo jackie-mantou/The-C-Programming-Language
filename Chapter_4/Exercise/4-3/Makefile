@@ -1,25 +1,18 @@
-calc : main.o getch.o getop.o \
-   stack.o 	
-	#cc -o calc main.o getch.o getop.o \
-		#stack.o
-	gcc -g main.o getch.o getop.o stack.o -o calc 
+objects = main.o getch.o getop.o stack.o
+calc : $(objects)
+	gcc -g $(objects) -o calc 
 
 main.o : main.c calc.h
-	#cc -c main.c
 	gcc -g -c main.c -o main.o
 
 getch.o : getch.c calc.h
-	#cc -c getch.c
 	gcc -g -c getch.c -o getch.o
 
 getop.o : getop.c calc.h
-	#cc -c getop.c
 	gcc -g -c getop.c -o getop.o
 
 stack.o : stack.c calc.h
-	#cc -c stack.c
 	gcc -g -c stack.c -o stack.o
 
 clean : 
-	rm calc main.o getch.o getop.o \
-		stack.o
+	rm calc $(objects)
