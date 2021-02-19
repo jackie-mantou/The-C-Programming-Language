@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-    int c;
+    int c, myargc;
     int number, except;
     char *lineptr;
     size_t lsize;
@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
     lineptr = NULL;
     lsize = 0;
     lnum = 0;
+    myargc = argc;
 
     /* process options */
     /* int getopt(int argc, char *argv[], const char *optstring) */
@@ -39,15 +40,23 @@ int main(int argc, char *argv[])
                 break;
 
             default:  /* '?' */
-                fprintf(stderr, "Invalid argument -%c!\n", c);
+                fprintf(stderr, "Usage: %s [-n] [-x] pattern [files]\n", argv[0]);
                 exit(EXIT_FAILURE);
         }
+        myargc--;
+    }
+
+    /* pattern not found */
+    if (myargc == 1) {
+        fprintf(stderr, "Invalid pattern!\n");
+        fprintf(stderr, "Usage: %s [-n] [-x] pattern [files]\n", argv[0]);
+        exit(EXIT_FAILURE);
     }
 
     strcpy(pattern, argv[optind]);   /* get pattern */
 
     /* determine stdin or specified file */
-    if (argc == 1) {
+    if (myargc == 2) {    /* stdin */
         printf("No specified file, read lines from standard input\n");
         fp = stdin;
 
@@ -61,8 +70,8 @@ int main(int argc, char *argv[])
             }
         }
     }
-    else
-        while (argc-- > 0 && (fp = fopen(argv[++optind], "r")) != NULL) { /* open file */
+    else     /* specified file */
+        while (myargc-- > 0 && (fp = fopen(argv[++optind], "r")) != NULL) { /* open file */
             lnum = 0;  /* clear line number in next file */
 
             /* process pattern */
