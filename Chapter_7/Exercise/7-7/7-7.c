@@ -8,7 +8,9 @@
 /* Exercise 7-7. Modify the pattern finding program of Chapter 5 to 
  * take its input from a set of named files or, if no files are named 
  * as arguments, from the standard input. Should the file name be printed
- * when a matching line is found? -Yes */
+ * when a matching line is found? -Yes 
+ *
+ * This program is equivalent to 'grep [-n] [-v] pattern [files]' */
 
 int main(int argc, char *argv[])
 {
@@ -25,10 +27,8 @@ int main(int argc, char *argv[])
     lineptr = NULL;
     lsize = 0;
     lnum = 0;
-    myargc = argc;
 
     /* process options */
-    /* int getopt(int argc, char *argv[], const char *optstring) */
     while ((c = getopt(argc, argv, OPTSTRING)) != -1) {
         switch (c) {
             case 'n':
@@ -43,9 +43,9 @@ int main(int argc, char *argv[])
                 fprintf(stderr, "Usage: %s [-n] [-x] pattern [files]\n", argv[0]);
                 exit(EXIT_FAILURE);
         }
-        myargc--;
     }
 
+    myargc = argc - optind + 1;
     /* pattern not found */
     if (myargc == 1) {
         fprintf(stderr, "Invalid pattern!\n");

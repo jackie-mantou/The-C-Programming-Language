@@ -6,7 +6,8 @@
 #define  OPTSTRING   "ul"
 #define  MAXSIZE     100
 
-/* convert content of file all to upper or lower */
+/* convert content of file all to upper or lower;
+ * -ul is equivalent to -l */
 
 void fileconversion(FILE *ifp, FILE *ofp, int u2l, int l2u);
 
@@ -17,7 +18,6 @@ int main(int argc, char *argv[])
     FILE *fp;
 
     u2l = l2u = 0;
-    myargc = argc;
 
     /* command option process */
     while ((c = getopt(argc, argv, OPTSTRING)) != -1) {
@@ -34,10 +34,9 @@ int main(int argc, char *argv[])
                 fprintf(stderr, "Usage: %s [-u] [-l] [files] ...\n", argv[0]);
                 exit(EXIT_FAILURE);
         }
-        myargc--;
     }
 
-     
+    myargc = argc - optind + 1;
     if (myargc == 1)    /* read from stdin */
         fileconversion(stdin, stdout, u2l, l2u);
     else
